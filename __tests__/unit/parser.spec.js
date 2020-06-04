@@ -19,6 +19,14 @@ describe("Parser", ()=> {
 
   })
 
+  it('should be able select only kills related lines',()=>{
+    const lines = readLog(path.resolve(__dirname,'../games.log'))
+ 
+     const linesKills = lines.filter(processLineKills)
+ 
+     expect(linesKills.length).toEqual(1069)
+   })
+
  
   
 })
