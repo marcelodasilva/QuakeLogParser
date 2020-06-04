@@ -15,3 +15,17 @@ export function readLog(path) {
 
   return lines
 }
+
+/**
+ * Process the lines with kills
+ *
+ * @export
+ * @param {string} line - Single line of log file
+ * @returns {boolean} - Return 
+ */
+export function processLineKills(line) {
+  const regex = /\s?(\d+:\d+)\sKill:\s(\d+)\s(\d+)\s(\d+):\s(.*)\skilled\s(.*)\sby\s(.*)/i
+  return !!line.match(regex)
+
+}
+
